@@ -1,0 +1,124 @@
+Aula 1 – Introdução a Algoritmos
+
+[Por mais que eu já saiba o básico de algoritmos. Vou fazer para concluir tudo e ainda ver se aprendo algo extra, já que no outro curso aprendi além do que vi na faculdade (claro, foram mais horas).]
+
+Algoritmos são conjuntos de passos finitos e organizados que, quando executados, resolvem um determinado problema.
+
+[Eu gosto de descrever algoritmo como uma sequência de passos lógicos para alcançar um objetivo ou resultado almejado.]
+
+Toda solução parte de um problema. A necessidade impulsiona a criação das coisas.
+
+--
+
+Ele está falando da proporação áurea e falando que é um algoritmo para beleza. Usa a razão phi, que é 1,6180339885...
+
+Num corpo de proporções perfeitamente simétricas (cosiderado por muitos como sinônimo de beleza), se a altura da pessoa dividida pela altura do umbigo até o chão, será o valor de phi. A distância do ombro até o dedo e a do cotovelo até o dedo também resulta em phi.
+
+Para o rosto também existem muitas medidas.
+
+Várias delas estão na obra O Homem Vitruviano, de Leonardo da Vinci.
+
+Na natureza, temos, por exemplo, o girassol, na distribuição das sementes; galhos de árvore; estrelas-do-mar; e a concha do caramujo nautilus.
+
+Depois que o homem de descobriu esse padrão, começou a usar conscientemente. 
+Na arquitetura, por exemplo, no partenon, na Grécia.
+Na obra O Nascimento de Vênus de Botticelli.
+Bethoven usou phi na 5a sinfonia.
+Vários músicos usam no ritmo e compasso atualmente.
+
+Hoje em dia, usam em produtos, logomarcas e sites.
+
+Você acaba gostando inconscientemente disso. Isso é um padrão, ou seja, algoritmo.
+
+--
+
+Toda reprodução de padrões é conhecido como ROTINA. E isso também é usado em algoritmos.
+
+O conceito de rotina é aplicável à nossa vida.
+
+Um algoritmo hipotético para atravessar a rua (Lido de cima para baixo e da esquerda para a direita):
+
+Algoritmos AtravesarRua (rotina)
+    Olhar para a direita
+    Olhar para a esquerda
+    Se estiver vindo carro (condição)
+        Não atravesse
+      senão
+        Atravesse
+    Fim-Se
+Fim-Algoritmo
+
+Outra versão para esse algoritmo:
+
+Algoritmos AtravesarRua (rotina)
+    Olhar para a esquerda
+    Olhar para a direita
+    Se não estiver vindo carro (condição)
+        Atravesse
+      senão
+        Não atravesse
+    Fim-Se
+Fim-Algoritmo
+
+Essa rotina também funciona e te leva a atravessar a rua. Portanto, isso também é um algoritmo.
+
+Isso não significa que é só pegar os mesmos passos e colocar em qualquer ordem.
+
+O EXEMPLO ABAIXO NÃO É UM ALGORITMO.
+
+Algoritmos AtravesarRua
+    Atravesse
+    Se não estiver vindo carro 
+        Olhar para a direita
+      senão
+        Olhar para a esquerda
+    Fim-Se
+    Não Atravesse
+Fim-Algoritmo
+
+Pois ele não é uma solução para o objetivo de atravessar a rua. [Pelo menos não é uma opção segura e o restante dos passos para além de Atravessar perdem a utilidade]
+
+Outros exemplos são, fazer uma ligação telefônica, preparar um bolo, fazer um saque num caixa eletrônico ou cancelar a TV por assinatura (piada que ele considera o algoritmo mais difícil do mundo, kkk)
+
+--
+s
+Um programa de computador é desenvolvido para suprir uma necessidade, ou seja, para resolver um problema.
+
+[Pensando agora, é para resolver problemas de rotinas.]
+
+Algoritmos servem para isso.
+
+Você tem um problema, você conhece o padrão para resolver esse problema e você cria um algoritmo para resolver tudo para você.
+
+--
+
+Ele criou um algoritmo simples para resolver equações do segundo grau.
+
+[Nossa, ele está usando uma ferramente que parece bem antiga. Acho que é VisuAlg]
+
+-- 
+
+Nós vamos começar a aparender algoritmos para resolver pequenos problemas, depois vamos aumentar em complexidade.
+
+------------
+
+Como eu já conheço algoritmos acho que esse curso vai ser mais rápido para mim.
+
+---
+
+Pelo que observei num comentário recente:
+
+"Pra quem está começando agora, eu recomendo abaixarem o visualg 2.5, a atual não da o mesmo resultado"
+
+[Um pouco estranho pensar que não daria o mesmo resultado, o algoritmo dele deve estar errado. Mas, qualquer coisa, tem essa informação que pode vir a ajudar.]
+
+---------
+Em materiais está assim:
+
+"Importante: O Visualg não tem compatibilidade com MacOS e Linux, a melhor opção para utilizar é no Windows."
+
+[Qualquer coisa uso Python ou não uso, porque já fiz Algoritmos. É mais para aprender algo novo que ele possa informar, como o conceito de rotina:
+
+"Toda reprodução de padrões é conhecido como ROTINA."]
+
+[Baixe o Wine e rodou.]

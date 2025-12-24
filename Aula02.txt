@@ -1,0 +1,220 @@
+Aula 2 – Primeiro Algoritmo
+
+-- Algoritmos Computacionais
+
+Tudo aquilo que você faz e que é considerado rotina pode ser considerado algoritmo.
+
+Para algoritmos computacionais o conceito é o mesmo, só que o foco de execução é um pouco diferente.
+
+Conceito criado pelo Guanabara para Algoritmos Computacionais:
+
+"São passos a serem seguidos por um módulo processador e seus respectivos usuários que, quando executados na ordem correta, conseguem realizar determinada tarefa."
+
+Módulo processador: É tudo aquilo que pode efetuar processamento. Um computador portátil, tablet, smartphone, ou até uma câmera se tiver um software... Tudo que puder ser programável.
+
+Usuário: É quem usa o programa.
+
+Realizar tarefa: Resolver um problema. Alguma necessidade do usuário.
+
+Ele está dizendo vários exemplos de algoritmos computacionais...
+
+---
+Para fazer Algoritmos Computacionais você precisa seguir os passos:
+
+Usar uma Lógica de Programação
+    depois
+Uma Linguagem de Programação (pode ser Java, C#, Python...)
+    aí, essa linguagem de programação será utilizada para
+Criar um Sistema Completo (que é o software que o usuário irá utilizar)
+
+[Não sei se ainda vou ficar escrevendo tanto...]
+
+---
+
+Ferramentas para representar a Lógica de Programação:
+
+FLUXOGRAMA: Que representa a lógica através de um fluxo de informações seguindo de um ponto a outro [na verdade são por meio de desenhos que parecem placas]
+
+DIAGRAMA DE NASSI SHNEIDERMAN (ou DIAGRAMA DE CHAPIN - lê-se chapan): Que representa a lógica através de blocos.
+
+PSEUDOCÓDIGO: É a lógica do programa escrito na sua linguagem nativa. No nosso caso, foi batizado de PORTUGOL.
+
+Neste curso será usado o Portugol. Aí escreveremos em Portugol e convertermos para qualquer lógica de programação que quisermos.
+
+Não adianta nada aprender PHP, Java, etc, se você não sabe Algoritmos.
+
+A construção de Lógica de Programação, de um bom pseudocódigo é muito importante para um profissional de TI.
+
+Se você é um programador antigo, você aprendeu isso em papel. [Eu aprendi em Python e no quadro (teste de mesa).]
+
+--
+
+Ferramenta: Visualg (visualizador de algoritmo), criado por Claudio Morgado, para auxiliar os alunos dele. Foi registrado como domínio público.
+
+-----
+
+Usando o Visualg:
+
+Digite um exclamação '!' e depois Ctrl + espaço.
+
+Isso mostrará a base de um algoritmo segundo o Visualg.
+
+Aparecerá isto:
+
+'
+
+algoritmo "semnome"
+var
+
+inicio
+fimalgoritmo
+
+'
+
+Entre as aspas é o nome.
+Depois tem a área de variáveis (var).
+E o corpo do algoritmo (que começa em inicio e termina em fimalgoritmo)
+
+Embaixo (na parte com grade) tem a representação da memória do computador, as variáveis e o escopo.
+
+No canto direito embaixo é o terminal, que mostra a saída de dados.
+Em cima há o Menu de opções e uma barra de ferramentas com as opções mais utilizadas do menu de cima.
+
+--
+Ele tá falando da maldição do Olá mundo para aprender a tecnologia. Que tem que escrever olá mundo se não não vai aprender ela. kkkk
+--
+
+Comandos de saída do Visualg:
+
+'Escreva':
+
+    Escreva ("Qualquer coisa")
+
+Tudo que estiver entre aspas é uma mensagem, uma cadeira de caracteres.
+
+F9 para executar o algoritmo.
+
+--
+Para criar coisas bonitas, você tem que ter conhecimentos de Design e outros. Os primeiros passos são assim, meio feios e cambaleantes. Aos poucos se evolui.
+--
+
+O Escreva é sempre na mesma linha, então tem o comando:
+
+'Escreval' (escreva L):
+
+    Escreval ("Qualquer coisa")
+
+Ele significa, escreva e salte para a próxima linha.
+
+Ficou assim:
+
+    algoritmo "primeiro"
+    var
+
+    inicio
+        Escreval("Olá, Mundo!")
+        Escreva("Me livrei da maldição!")
+    fimalgoritmo
+
+--
+
+Explicação de variáveis...
+
+Espaços vazios num armário, com etiquetas.
+
+Elas têm sempre um "identificar e um tipo". Algo como "bola: Brinquedo" (ou seja, Identificador 'bola' e tipo 'brinquedo')
+
+IDENTIFICADOR
+
+No Visualg (regras)
+
+1. Deve começar com uma letra.
+2. Os próximos podem ser letras ou números.
+3. Não pode utilizar nenhum símbolo, exceto _ (underline, que é usado para espaço em branco) (Então, nada de @#$%&...)
+4. Não pode conter espaços em branco
+5. Não pode conter letras com acentos.
+6. Não pode ser uma palavra reservada (algoritmo, var, inicio, fimalgoritmo, Escreval, Escreva...)
+
+Exemplos:
+
+Nota1 (válido)
+Médio (inválido)
+Salário Bruto (inválido)
+9dade (inválido)
+algoritmo (inválido - palavra reservada)
+inicio_algoritmo (válido)
+
+TIPOS PRIMITIVOS
+
+No Visualg
+
+'Inteiro' (Não fracionários. Ex: 1, 3, -5)
+
+'Real' (Decimais. Representado com . Ex: 0.5, -77.3)
+
+'Caractere' (Entre as aspas e pode usar acentos.Ex: "Gustavo", "Algoritmo", "123")
+
+'Logico' (somente dois - é o booleano. Ex: verdadeiro, falso)
+
+
+Para usar:
+
+Dentro de 'var' coloque identificador e o tipo
+
+    var
+        identificador: tipo
+
+Ex:
+
+    var
+        msg: caractere
+
+
+Quando isso é feito, na memória do computador é como se fosse colocado na memória do computador uma etiqueta. E agora o espaço poderá receber caracteres, é o conceito de atribuição.
+
+ATRIBUIÇÃO
+
+No Visualg
+
+Usa este símbolo:
+
+    <-
+
+Exemplo:
+
+    msg <- "Olá, Mundo!"
+
+A variável 'msg' vai RECEBER a os caracteres "Olá, Mundo!". Isso é atribuição. 
+
+É como jogar a mensagem dentro da variável.
+
+Exemplo:
+
+    algoritmo "primeiro"
+    var
+    msg: caractere
+    inicio
+        msg <- "Olá, mundo!"
+        Escreval(msg)
+        Escreva("Me livrei da maldição!")
+    fimalgoritmo
+
+Veja que na grade do Visualg tem:
+
+Escopo | Nome | Tipo | Valor
+GLOBAL | MSG  | C    | "Olá, Mundo!"
+
+Formas de escrever possíveis:
+
+Escreva("msg")
+
+Escreva(msg)
+
+Escreva ("Mensagem:", msg)
+
+[Escreva esta última sem vírgula e acusará erro.]
+
+--
+
+Lógica de programação é igual andar de bicicleta ou dirigir um carro. Você aprende com o tempo e fica fácil.
+

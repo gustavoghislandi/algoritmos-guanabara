@@ -1,0 +1,156 @@
+Aula 3 – Comando de Entrada e Operadores
+
+COMANDOS DE ENTRADA
+
+Solicitam algo ao usuário. Servem para entrar com dados no computador. Assim como os de saída são para sair (mostrar algo na tela).
+
+Comandos do Visualg:
+
+'Leia'
+
+    Leia(Nome)
+
+Irá aparecer um cursor piscando para o usuário digitar. Ele não precisa digitar as aspas (que são só para mostrar que são do tipo string)
+
+Exemplo:
+
+    algoritmo "MeuNome"
+    var
+    Nome: Caractere
+    inicio
+        Escreva ("Digite seu nome: ")
+        Leia(Nome)
+        Escreva ("Muito prazer, ", Nome, "!")
+    fimalgoritmo
+
+--
+Prática:
+
+Solicitar dois números para o usuário e mostrar a soma entre eles.
+
+    algoritmo "Soma"
+    var
+    N1, N2, S: Inteiro
+    inicio
+        Escreva ("Informe um número: ")
+        Leia(N1)
+        Escreva ("Informe outro número: ")
+        Leia(N2)
+        S <- N1 + N2
+        Escreva("A soma entre", N1, " e", N2, " é:", S)
+    fimalgoritmo
+
+[Neste programa, se houver uma variável no escreva, ela vai dar um espaço antes, que não é necessárrio, portanto colocar na string que a antecipar]
+
+Na programação quem ter que ter trabalho é o programador e não o usuário. Ele não tem que adivinhar nada. Você tem que se preocupar com a interatividade. [Chamamos isso de UX ou UX/UI]
+
+OPERADORES ARITMÉTICOS
+
+No Visualg (são 7)
+
++ |Adição
+- |Subtração
+* |Multiplicação
+/ |Divisão
+\ |Divisão inteira
+^ |Exponenciação
+% |Módulo (é o resto da divisão)
+
+Exemplos:
+
+A <- 5
+B <- 2
+
+A + B = 7
+A - B = 3
+A * B = 10
+A / B = 2.5
+A \ B = 2 (pega somente o inteiro da divisão)
+A ^ B = 25
+A % B = 1 (é o resto da divisão)
+
+
+ORDEM DE PRECEDÊNCIA
+
+() Parênteses
+^ Exponenciação
+* / Multiplicação e Divisão
++ - Adição e Subtração
+
+Exemplos:
+
+3 + 2 / 2 = 4 
+
+(3 + 2) / 2 = 2.5
+
+
+
+    algoritmo "Media"
+    var
+    N1, N2: Inteiro
+    M: Real
+    inicio
+        Escreva ("Informe um número: ")
+        Leia(N1)
+        Escreva ("Informe outro número: ")
+        Leia(N2)
+        M <- (N1 + N2)/2
+        Escreva("A média entre", N1, " e", N2, " é:", M)
+    fimalgoritmo
+
+
+FUNÇÕES ARITMÉTICAS
+
+No Visualg
+
+Abs     |Valor Absoluto
+Exp     |Exponenciação
+Int     |Valor Inteiro
+RaizQ   |Raiz Quadrada
+Pi      |Retorna Pi
+Sen     |Seno (rad)
+Cos     |Cosseno (rad)
+Tan     |Tangente (rad)
+GraupRad|Graus para Rad
+
+Exemplos:
+
+Abs(-10) = 10 (módulo na matemática da escola)
+Exp(3,2) = 9 (3 com expoente 2)
+Int(3.9) = 3 (inteiro de 3.9)
+RaizQ(25) = 5
+Pi = 3.14...
+Sen(0.523) = 0.5 (0.523 em rad é aproximadamente 30 graus)
+Cos(0.523) = 0.86 (raiz de 3 sobre 2)
+Tan(0.523) = 0.57 (raiz de 3 sobre 3)
+GraupRad(30) = 0.523 (que estamos usando nos exemplos acima)
+
+
+    algoritmo "semnome"
+    var
+        A: Real
+    inicio
+        A <- Int(RaizQ(90))
+        Escreva(A)
+    fimalgoritmo
+
+    algoritmo "semnome"
+    var
+        A: Real
+    inicio
+        A <- Sen(GraupRad(90))
+        Escreva(A)
+    fimalgoritmo
+
+    algoritmo "conversor"
+    var
+        angulo, S: Real
+    inicio
+        Escreva("Informe um ângulo: ")
+        Leia(angulo)
+        S <- Sen(GraupRad(angulo))
+        Escreva("O seno de", angulo, " é igual a", S)
+    fimalgoritmo
+
+--
+Agora pratique
