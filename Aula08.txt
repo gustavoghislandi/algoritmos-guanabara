@@ -1,0 +1,172 @@
+Aula 8 – Estruturas Condicionais 2
+
+CONDIONAL ANINHADA é quando há o encadeamento de estruturas condicionais compostas. Ou seja, é quando há estrutura condicional dentro da outra.
+
+'Anihada' vem de 'ninho', como se fosse um 'ninho', uma estrutura dentro da outra.
+
+
+    Se (situação 1) entao
+        Bloco A
+    senao
+        Se (situação 2) entao
+            Bloco A
+        senao
+            Bloco C
+        FimSe
+    FimSe
+
+Ele passou o exemplo de aluno aprovado ou reprovado.
+
+Ele deu uma dica é que sempre que você abrir um Se, feche com um FimSe, para não se enrolar. [Hoje em dia as linguagens não usam termo de fechamento para a sintaxe e quase nunca se escreve else, porque o else é o que sobra caso a condição não seja satisfeita.]
+
+No exemplo que ele passou, ficou aquela estrutura em formato de '>', horizontalizada.
+
+Agora ele está passando a estrutura 'Escolha Caso' (switch case):
+
+    Escolha (variável)
+        Caso valor
+            Bloco A
+        Caso valor
+            Bloco B
+        Caso valor
+            Bloco C
+        OutroCaso
+            Bloco D
+    FimEscolha
+
+O OutroCaso (default) é uma estrutura de caso nenhum seja válido.
+
+Usar o 'Escolha Caso' (switch case) é uma maneira de evitar estruturas muito aninhadas.
+
+A estrutura Escolha não serve para testar faixas de valores (maior que ou menor que, por exemplo).[porque é booleano o resultado] Ela só funciona, basicamente para valores inteiros. Algumas linguagens aceitam para dados como caractere.
+
+    algoritmo "CriancaEsperanca"
+    var
+        D: Inteiro
+        Valor: real
+    inicio
+        Escreval("----------------------------")
+        Escreval("     CRIANÇA ESPERANÇA      ")
+        Escreval("----------------------------")
+        Escreval(" Muito obrigado por ajudar! ")
+        Escreval(" Para doar, digite o número ")
+        Escreval(" correspondente à doação: ")
+        Escreval(" [1] para doar R$10 ")
+        Escreval(" [2] para doar R$25 ")
+        Escreval(" [3] para doar R$50 ")
+        Escreval(" [4] para doar outros valores ")
+        Escreval(" [5] para cancelar ")
+        Leia(D)
+        Escolha D
+                Caso 1
+                    Valor <- 10
+                Caso 2
+                    Valor <- 25
+                Caso 3
+                    Valor <- 50
+                Caso 4
+                    Escreva("Qual o valor da doação (R$)?")
+                    Leia(Valor)
+                Caso 5
+                    Valor <- 0
+                    
+        FimEscolha
+        Escreval("--------------------------")
+        Escreval(" SUA DOAÇÃO FOI DE R$", Valor)
+        Escreval("      MUITO OBRIGADO!     ")
+        Escreval("--------------------------")
+                    
+    fimalgoritmo
+
+    Esse acima, eu escreveria melhor colocando uma condicional. Mas ali é só de exemplo. Fiz:
+
+    algoritmo "CriancaEsperanca"
+    var
+        D: Inteiro
+        Valor: real
+    inicio
+        Escreval("----------------------------")
+        Escreval("     CRIANÇA ESPERANÇA      ")
+        Escreval("----------------------------")
+        Escreval(" Muito obrigado por ajudar! ")
+        Escreval(" Para doar, digite o número ")
+        Escreval(" correspondente à doação: ")
+        Escreval(" [1] para doar R$10 ")
+        Escreval(" [2] para doar R$25 ")
+        Escreval(" [3] para doar R$50 ")
+        Escreval(" [4] para doar outros valores ")
+        Escreval(" [5] para cancelar ")
+        Leia(D)
+        Escolha D
+                Caso 1
+                    Valor <- 10
+                Caso 2
+                    Valor <- 25
+                Caso 3
+                    Valor <- 50
+                Caso 4
+                    Escreva("Qual o valor da doação (R$)?")
+                    Leia(Valor)
+                Caso 5
+                    Valor <- 0
+                    
+        FimEscolha
+        Se (Valor <> 0) entao
+            Escreval("--------------------------")
+            Escreval(" SUA DOAÇÃO FOI DE R$", Valor)
+            Escreval("      MUITO OBRIGADO!     ")
+            Escreval("--------------------------")
+        senao
+            Escreval(" Doação cancelada. ")
+        FimSe
+                    
+    fimalgoritmo
+
+Ele passou um exemplo de nome de funcionário e salário conforme número de dependentes.
+
+Para isso ele usou um Escolha Caso assim:
+
+    Escolha dep
+        Caso 0
+            novo_sal <- sal + (sal*5/100)
+        Caso 1, 2, 3
+            novo_sal <- sal + (sal*10/100)
+        Caso 4, 5, 6
+            novo_sal <- sal + (sal*15/100)
+        OutroCaso
+            novo_sal <- sal + (sal*18/100)
+    FimEscolha
+
+[Me chamou a tenção o fato de ele usar mais de um valor para cada caso. Eu não lembro de ter visto isso antes. Bom saber que é possível.]
+
+[Ele aumentou o salário para o caso de 0, não me parece o mais lógico no exemplo.]
+
+Fiz um rápido, mais curto, assim:
+
+    algoritmo "semnome"
+        var
+    dep: Inteiro
+        sal, novo_sal: real
+    inicio
+        Escreva("Qual o salário?")
+        Leia(sal)
+        Escreva("Qual o número de filhos?")
+        Leia(dep)
+        Escolha dep
+            Caso 0
+                novo_sal <- sal
+            Caso 1, 2, 3
+                novo_sal <- sal + (sal*10/100)
+            Caso 4, 5, 6
+                novo_sal <- sal + (sal*15/100)
+            OutroCaso
+                novo_sal <- sal + (sal*18/100)
+        FimEscolha
+        Escreva("O salário é de:",novo_sal)
+    fimalgoritmo
+
+Ele disse para fazer um que a nota de um aluno vai de A a F, conforme pontuação. Como são faixas de números (1000 a 900, por exemplo), não se aplica o Escolha Caso.
+
+E um outro é uma partida de futebol. Conforme a diferença de gols. 5 de diferença é considerado goleada.
+
+[Não farei, já sei. Só fiz o outro para ver o Escolha Caso funcionando com mais de um valor no mesmo Caso.]
