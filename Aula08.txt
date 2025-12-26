@@ -1,8 +1,8 @@
 Aula 8 – Estruturas Condicionais 2
 
-CONDIONAL ANINHADA é quando há o encadeamento de estruturas condicionais compostas. Ou seja, é quando há estrutura condicional dentro da outra.
+CONDICIONAL ANINHADA é quando há o encadeamento de estruturas condicionais compostas. Ou seja, é quando há estrutura condicional dentro da outra.
 
-'Anihada' vem de 'ninho', como se fosse um 'ninho', uma estrutura dentro da outra.
+'Aninhada' vem de 'ninho', como se fosse um 'ninho', uma estrutura dentro da outra.
 
 
     Se (situação 1) entao
