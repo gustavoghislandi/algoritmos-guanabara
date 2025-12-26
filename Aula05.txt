@@ -1,0 +1,12 @@
+Aula 5 – Introdução ao Scratch
+
+Scratch foi criado no MIT. Ela tem o intuito de ensinar lógica de programação para crianças.
+
+Eu instalei via apt (49.5 MB):
+
+    sudo apt install scratch
+
+--
+
+
+É bastante criativo. Dá pra programar até uns joguinhos.
