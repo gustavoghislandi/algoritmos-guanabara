@@ -1,0 +1,11 @@
+Aula 6 – Exercícios de Algoritmo Resolvidos
+
+O Guanabara disse que não faz o programa criando as variáveis primeiro. Disse ele que é uma dica. [Eu me adapto com ambos os tipos, se vocÊ sabe o que está fazendo, não faz muita diferença.]
+
+Ele disse que indentação é uma boa prática de programação.
+
+[Fiz o programa Creuza01 sem a variável idade.]
+
+[Na real, acho que vou passar mais rápido nesses mesmo... é meio perda de tempo rever isso que já fiz em python e outras linguagens... já aprendi como funciona o Visualg e o Scratch...]
+
+Ele fez um programa de conversão entre real e dólar, um entre graus Celsius e Farenheit, um de tributação simples. e disse pra fazer um sobre empréstimo em que a creuza toma um empréstimo com 20% de juros (totais) e paga em 10 vezes.
