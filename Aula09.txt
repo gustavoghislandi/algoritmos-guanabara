@@ -1,0 +1,57 @@
+Aula 9 – Estruturas de Repetição 1
+
+[No Scratch, eu não estava entendendo porque o sprite não dava 10 passos no no valor 10. Ele anda 10 pontos (talvez pixels). O Guanabara colocou um Eixo x,y de fundo (que já vem junto) e isso tornou isso claro.]
+
+Ele passou um exemplo de while com valor inicial 0 e final x <= 5. E outro que é o enquanto for verdade [que costuma ser o padrão implícito do while].
+
+
+    algoritmo "ConteAte10"
+    var
+        contador: Inteiro
+    inicio
+        contador <- 0
+        Enquanto (contador <=10) faca
+                Escreval(contador)
+                contador <- contador + 1
+        FimEnquanto
+    fimalgoritmo
+
+Saída [0 até 10]
+
+Contudo o valor da variável contador, neste caso, ficou 11, porque precisa ser maior que 10 para não entrar no loop.
+
+No Visualg, existe um botão chamado "Executar com timer",que faz a execução mais lenta, possibilitando ver o passo a passo.
+
+Ele mudou o exemplo para contador recebe -2 com início 10.
+
+Outro exemplo é com input do usuário que será o valor final do loop.
+
+Depois, ele colocou para o usuário determinar valor do salto.
+
+Perceba que a leitura é feita antes do Enquanto para ser lida uma vez só e não cada vez que roda. [Engraçado pensar que isso parecia confuso no começo do aprendizado. Talvez tenha sido muita informação nova em em pouco tempo.]
+
+algoritmo "somadorNumerico"
+var
+    cont, N, S, maior: Inteiro
+inicio
+    cont <- 1
+    S <- 0
+    Enquanto (cont <= 5) faca
+            Escreval("Digite o", cont, "o. valor:")
+            Leia(N)
+            Se (N > maior) entao
+                maior <- N
+            FimSe
+            S <- S + N
+            cont <- cont + 1
+    FimEnquanto
+    Escreval("A soma de todos os valores foi", S)
+    Escreval("O maior valor digitado foi", maior)
+
+fimalgoritmo
+
+Ele fez mais um exemplo de conversão de dólar real.
+
+Se esquecer de colocar a modificação de valor do contador, use Ctrl + F2 para sair ou nos botões que ele indicou, porque ele entrará em loop infinito.
+
+Ele disse pra fazer um exemplo de contador que percebe se o valor vai crescer ou não. E o do melhor aluno da turma. [Também não farei estes.]
