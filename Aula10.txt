@@ -1,0 +1,35 @@
+Aula 10 – Estruturas de Repetição 2
+
+Comando 'repita'. [É o 'do-while]
+
+Ao invés de fazer o teste no início (como no 'Enquanto'), ele faz o teste no final. É equivalente ao 'do-while', portanto.
+
+    algoritmo "Conta1a10"
+    var
+    cont: Inteiro
+
+    inicio
+        cont <- 1
+        Repita
+            Escreval(cont)
+            cont <- cont + 1
+        Ate (cont >10)
+    fimalgoritmo
+
+Ou seja, se o valor fosse 10 ou mais de início, ele ainda rodaria uma vez mostrando o valor.
+
+Ele fez um exemplo de tabuada também.
+
+Fez também um que conta quantos números do input são negativos. Contador 5 para limitar a quantidade de perguntas.
+
+Depois, um exemplo de fatorial.
+
+No final ele colocou uma pergunta: "Quer continuar? S/N", e aí o verificador do até fica "Ate (R = "N"), sendo R uma variável do tipo Caractere.
+
+Usou o comando 'LimpaTela', que limpa a tela (mas permanece a execução).
+
+Também passou o exemplo de verificação de número primo. No exemplo dele, se o contador for maior que 2, então não é primo. Ele pegou o resto da divisão entre N e C, N sendo o número do input e C o contador que soma de um em 1 até o valor de N.
+
+Passou aqueles exemplos que tem sexo, cor do olhos, idade... Sempre com a pergunta "Quer continuar?".
+
+[Isso está sendo algoritmos completo igual o da faculdade.]
