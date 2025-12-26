@@ -1,0 +1,46 @@
+Aula 7 – Estruturas Condicionais 1
+
+CONDICIONAL SIMPLES é o nome da estrutura em que existe um bloco sendo executado se (if) a condição for verdadeira.
+
+    Se (dinheiro >= 10000) entao
+        Escreva("Partiu Disney")
+    FimSe
+
+
+[Ele fez um exemplo mal escrito em português, usou futuro para falar do passado. Com isso, dá pra perceber o quanto ele melhorou nesses 11 anos. Sem ironia, ele teve uma grande evolução. Até o tamanho dos vídeos está melhor.]
+
+CONDICIONAL COMPOSTA é o nome da estrutura que incorpora o senão (else) na sintaxe.
+
+    Se (dinheiro >= 10000) entao
+        Escreva("Partiu Disney")
+    senao
+        Escreva("#chateado")
+    FimSe
+
+
+[Ele deu um exemplo de número para ou ímpar. é Aquela questão de o resto da divisão (%) ser 0 ou 1.]
+
+
+No Visualg, pressionar Ctrl + G, faz a indentação automaticamente. 
+
+Ele disse pra não acostumar porque os editores de PHP (PHPStorm) e Java(netBeans) não tinhamm isso à época. [Pra Pyhton isso é BEM importante...]
+
+Ele deu mais um exemplo de IMC. Não fiz, já fiz um monte desses.
+
+Ele falou uma coisa do Visualg que é comum de acontecer em outras linguagens:
+
+Escrever 
+
+   Se (18.5 <= IMC < 25) 
+
+não funciona, tem que usar
+
+   Se (IMC >= 18.5) e (IMC <25) entao
+
+Na verdade, prefiro até assim:
+
+    Se ((IMC >= 18.5) e (IMC <25)) entao
+
+Com isso fica bem delimitado que o valor lógico sairá de dentro dos parenteses. Evitando erros inesperados.
+
+[Ele deixou mais uns exercícios que também não vou fazer porque já sei. Bora acelerar. Tô assistindo pra ver se pego algum ouro perdido e pelo fato de que isso é uma base para o restante das aulas dele, ele irá presumir que eu assisti essas. Assim garanto não perder nada.]
