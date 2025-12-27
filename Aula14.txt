@@ -1,0 +1,296 @@
+Aula 14 – Vetores
+
+VARIÁVEIS COMPOSTAS
+
+As variáveis simples são alocadas na memória de acordo com as necessidades do Sistema Operacional.
+
+--- Variável composta homogênea
+
+A Variável composta homogênea chama-se assim porque todos os itens dela são do mesmo tipo (no exemplo, abaixo, Inteiro)
+
+n: vetor[1..4] de inteiro
+
+As variáveis simples são alocadas um tanto quanto esparçadas ou aleatoriamente, enquanto as variáveis compostas tem sua alocação uma seguida da outra na memória. No caso acima, é uma variável com 4 valores(espaços na memória).
+
+n[1] <- 3 // n na posição 1 recebe o valor 3.
+
+Entre colchetes fica o índice.
+
+--- Variável composta homogênea unidimensional
+
+A uma Variável composta homogênea unidimensional dá-se o nome de VETOR.
+
+    algoritmo "TesteVetor"
+    var
+        v: vetor[1..6] de Inteiro
+        c: Inteiro
+    inicio
+        Para c <-1 ate 6 faca
+            Escreva("Digite o", c,"o.valor")
+            Leia(v[c])
+        FimPara
+        
+        Para c<-1 ate 6 faca
+            Escreva("{",v[c],"}")
+        FimPara
+    fimalgoritmo
+
+--
+
+Ele passou um exemplo de mostrar os total de pares em um vetor de 7 posições.
+
+Diz ele que a verdadeira utilidade dos vetores é conseguir armazenar os valores. Por conta da posição dos items, o índice deles. O que não é possível numa variável simples. O fato de ter vários espaços armazenáveis em uma mesma variável, pois na variável simples o valor deve ser substituído.
+
+Ele passou um exemplo de listagem de uma turma, com nome de aluno, nota 1, nota 2 e media (todos vetores de mesmo tamanho). Eu não ia copiar, mas ele passou um macete que deve ter em outras linguagens, mas não me foi ensinado e nunca vi ninguém usar (se vi, não foi com essa facilidade).
+
+    algoritmo "Turma"
+        var
+        nome: vetor[1..4] de Caractere
+        n1: vetor[1..4] de Real
+        n2: vetor[1..4] de Real
+        m: vetor[1..4] de Real
+        i: Inteiro
+
+    inicio
+        Para i <- 1 ate 4 faca
+            Escreval("ALUNO",i)
+            Escreva("Nome: ")
+            Leia(nome[i])
+            Escreva("Primeira Nota:")
+            Leia(n1[i])
+            Escreva("Segunda Nota:")
+            Leia(n2[i])
+            m[i] <- (n1[i]+n2[i]/2)
+        FimPara
+        
+        LimpaTela
+            Escreval("LISTAGEM DE ALUNOS")
+            Escreval("------------------")
+            Para i <- 1 ate 4 faca
+                Escreval(nome[i]:15, m[i])
+        FimPara
+    fimalgoritmo
+
+O bizu está aqui:
+
+    Escreval(nome[i]:15, m[i]:4:1)
+
+Aquele ':15' depois do vetor faz com que caso o nome não use 15 espaços, o restante será preenchido com espaços em branco. Isso alinhará o próximo item com muita facilidade. E mais! Eu testei agora com nomes maiores do que 15 espaços, e simplesmente os caracteres excedentes foram suprimidos de aparecer, porém eles ainda permancem constando na variável.
+
+E em 'm' ele colocou ainda ':4:1', sendo 4 espaços ao todo e uma decimal. Ou seja, dois números, um ponto e uma decimal.
+
+----- ChatGPT sobre o fato de o Visualg ter permitido extrapolar o valor de 4 casas com o valor 20000.0 usado como exemplo -----
+
+O que realmente acontece no Visualg
+
+👉 O Visualg NÃO corta nem gera erro quando o número é maior que a largura definida.
+
+Em vez disso:
+
+O 4 funciona como largura mínima, não máxima
+
+Se o número precisar de mais espaço, o Visualg expande o campo automaticamente
+
+Exemplo
+
+Código:
+
+Escreval(m[i]:4:1)
+
+
+Valores e saídas:
+
+Valor	Saída
+3.2	3.2
+25.8	25.8
+20000.0	20000.0
+
+Nenhuma inconsistência, nenhum erro.
+
+Então pra que serve o 4?
+
+Ele só é útil quando:
+
+Você está organizando colunas
+
+Os valores normalmente cabem naquele espaço
+
+Quer alinhamento visual
+
+⚠️ Importante
+
+Visualg é bem permissivo:
+
+Não lança erro
+
+Não trunca valores
+
+Prioriza mostrar o número completo
+
+🧠 Conclusão
+
+✔️ O resultado está correto
+✔️ Não há inconsistência
+✔️ O formato não impõe limite, só sugere
+
+----- Fim do ChatGPT sobre o fato de o Visualg ter permitido extrapolar o valor de 4 casas com o valor 20000.0 usado como exemplo -----
+
+Esta foi uma saída teste que fiz:
+
+------------------
+Mario Antonio V 2.0
+Carlos Antonio  2.0
+Bianca de Moral350000.0
+Teddy          10.0
+
+Ou seja, foram delimitados 15 espaços de caracteres e depois 4 caracteres com o ponto como o espaço padrão seguinte.
+
+------------------
+alfredo        6790122.5alfre
+ww             678.5ww   
+e                1.5e    
+e                2.0e
+
+Acima é o retorno disto:
+
+    Escreval(nome[i]:15, m[i]:5:1,nome[i]:5)
+
+Portanto, é possível concluir que ele permite o extravazamento de números do lado esquerdo do ponto, mas não de caracteres. Esse extravazamento empurra o restante adiante. Que continuarão seguindo suas regras de compactação.
+
+Não testarei adiante, com mais colunas.
+
+----
+
+Depois ele complementou mostrando o total de alunos com nota acima da média da turma.
+
+
+Ele fez um exemplo também que receberá somente os nomes que começarem com a letra C. Abaixo:
+
+    algoritmo "SoComC"
+    var
+        nome: Caractere
+        soC: vetor[1..10] de Caractere
+        c, tot: Inteiro
+    inicio
+        tot <- 0
+        Para c <- 1 ate 10 faca
+            Escreva("Digite seu nome:")
+            Leia(nome)
+            Se (copia(maiusc(nome),1,1)= "C") entao
+                tot <-tot + 1
+                soC[tot] <- nome
+            FimSe
+        FimPara
+        
+        LimpaTela
+        Escreval("LISTAGEM FINAL")
+        Para c <- 1 ate tot faca
+            Escreval(soC[c])
+        FimPara
+        
+    fimalgoritmo
+
+
+Esse código faz com que sejam armanezadas strings com início C nas posições, em ordem crescente.
+
+NOTA: Como o vetor é de string, enquanto não preenchidas as string, elas são preenchidas com "" (string vazia). Percebi pelo teste de mesa do Visualg.
+
+[Eu achei que não ia copiar muito, mas os exemplos são ótimos. A maneira que ele armazenou no vetor é bem interessante, usando o valor de tot para a posição.]
+
+--
+
+Ele passou um exemplo de ordenação de vetor, que compara todas as posições com todas as posições consecutivas dela (as depois dela).
+
+A 1a é comparada com a 2a, a 3a e com a 4a.
+
+5906
+
+5 é maior igual a 9? Não, então fica.
+5 é maior igual a 0? Sim, então troca.
+5 é maior igual a 6? Não, então fica.
+
+Não há necessidade de comparar o 9 com a primeira posição, porque como o 5 se comparou com todas anteriormente.
+
+9 é maior igual a 5? Sim, então troca.
+9 é maior igual a 6? Sim, então troca.
+
+
+    algoritmo "OrdenaVetor"
+    var
+        vet: vetor[1..4] de Inteiro
+        i, j,aux: Inteiro
+    inicio
+        Para i <- 1 ate 4 faca
+            Escreva("Digite um valor:")
+            Leia(vet[i])
+        FimPara
+        
+        Para i <- 1 ate 3 faca // 3, que é o total(4) menos 1
+                Para j <- i+1 ate 4 faca
+                    Se(vet[i] > vet[j]) entao
+                                aux <- vet[i]
+                                vet[i] <- vet[j]
+                                vet[j] <- aux
+                    FimSe
+                FimPara
+        FimPara
+        
+        Para i <-1 ate 4 faca
+            Escreva("{",vet[i],"}")
+        FimPara
+    fimalgoritmo
+
+O nome dela é "Ordenação por Seleção (Selection Sort)."
+
+Se fosse "Bubblesort" a linha:
+
+    Para j <- i+1 ate 4 faca
+
+Seria:
+
+    Se (vet[j] > vet[j+1]) entao
+
+O Bubblesort compara elementos vizinhos. Ele é menos eficiente. Mas tem o Bubblesort otimizado (IA que me passou kkkk) que coloca uma flag false antes do for do 'j' e sinaliza ela como true de volta se a condição dentro do 'for' do 'j' for true. Teria que analisar se é otimizado mesmo. Eu fiz um pouco do teste de mesa, mas não fiquei comparando.
+
+O CÓDIGO 
+
+    algoritmo "BubbleSortOtimizado"
+var
+    vet: vetor[1..4] de Inteiro
+    i, j, aux: Inteiro
+    trocou: Logico
+inicio
+    Para i <- 1 ate 4 faca
+        Escreva("Digite um valor:")
+        Leia(vet[i])
+    FimPara
+
+    Para i <- 1 ate 3 faca
+        trocou <- Falso
+        Para j <- 1 ate 4 - i faca
+            Se (vet[j] > vet[j+1]) entao
+                aux <- vet[j]
+                vet[j] <- vet[j+1]
+                vet[j+1] <- aux
+                trocou <- Verdadeiro
+            FimSe
+        FimPara
+
+        Se (trocou = Falso) entao
+        FimSe
+    FimPara
+
+    Para i <- 1 ate 4 faca
+        Escreva("{", vet[i], "}")
+    FimPara
+fimalgoritmo
+
+Ele propôs um exercicio para colocar uma tabela de times em que um time não pode jogar contra ele mesmo (obviamente).
+
+Outro é de correção de provas. Aí mostra os nomes dos alunos, notas e média da turmas, mas usando vetores. Daria para hierarquizar as posições dos alunos conforme as notas também...
+
+Outro é de Reserva de cadeiras no cinema. Ele faz com o que o valor do item fique como "---" quando for ocupado. Não gostei, mas entendi. Porque você depois pode reiniciar o vetor para uma nova sessão criando uma função de criação dos lugares novamente. Mas isso aí é mais para aprender. O certo é botar uma flag "ocupado <- Verdadeiro".
+
+Não farei esses.
+
+[A aula tem 40 min, tomei 3 horas.]
