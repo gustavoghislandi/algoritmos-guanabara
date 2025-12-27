@@ -1,0 +1,218 @@
+Aula 13 – Funções
+
+Funções são rotinas, assim como os procedimentos.
+
+A diferença entre função e procedimento é que as funções podem retornar um resultado.
+
+O procedimento recebe valores, faz os cálculos e mostra o resultado. Ele não dá resposta ao programa principal. 
+
+Já as funções, sim. As funções retornam resultados e, depois, no código principal será decidido o que será feito com esse resultado.
+
+PROCEDIMENTO
+
+    Procedimento Soma (A, B: Inteiro)
+    var
+        S: Inteiro
+    inicio
+        S <- A + B
+        Escreval("A soma vale", S)
+    FimProcedimento
+
+    inicio       // programa principal
+        N1 <- 5
+        N2 <- 4
+        Soma(N1,N2)
+    fimAlgoritmo
+
+
+FUNÇÃO
+
+    Funcao Soma (A, B: Inteiro) : Inteiro
+    var
+        S: Inteiro
+    inicio
+        S <- A + B
+        Retorne S
+    FimFuncao
+
+    inicio       // programa principal
+        N1 <- 5
+        N2 <- 4
+        RES <- Soma(N1,N2)
+        Escreval(A soma é", RES)
+    fimAlgoritmo
+
+Perceba que na função há adicionalmente o tipo de dado a ser retornado pela função ': Inteiro' e, ao invés de Escreval, há um Retorne (com a variável do tipo Inteiro, que depois é usada no programa principal).
+
+    algoritmo "SomaFuncao"
+    var
+        V1, V2, S:Inteiro
+    Funcao Soma(X, Y: Inteiro) :Inteiro
+    Inicio
+        Retorne (X + Y)
+
+    FimFuncao
+    inicio
+        Escreva("Digite o primeiro valor:")
+        Leia(V1)
+        Escreva("Digite o segundo valor:")
+        Leia(V2)
+        S <- Soma(V1,V2)
+        Escreval("A soma entre", V1, " e", V2, " é igual a", S,".")
+    fimalgoritmo
+
+No caso acima foi dado o retorno somente do resultado, sem colocar numa variável a ser retornada. É possível também.
+
+No procedimento, o tratamento do dado é padronizado. Na função, o tratamento será dado no programa principal.
+
+--
+Ele passou um exemplo de verificação de para ou ímpar. Entra um dado Inteiro e retorna Caractere. E usou condicional, se par, retorna "PAR", se ímpar(senao) retorna "ÍMPAR".
+
+Fez um de fatorial também. Este eu vou escrever abaixo porque ele 'Retorna R', mas R é de escopo local, o que realmente retorna é o valor de R. Nesse sentido, R não pode ser chamado fora da função.
+
+    algoritmo "FatorialFuncao"
+        var
+    N, F: Inteiro
+    
+    Funcao Fatorial(V: Inteiro):Inteiro
+    Var
+        C,R:Inteiro
+    Inicio
+        R <- 1
+        Para C <- 1 ate V faca
+            R <- R*C
+        FimPara
+        Retorne R
+    FimFuncao
+
+    inicio
+        Escreva("Digite um número:")
+        Leia(N)
+        F <-Fatorial(N)
+        Escreval("O valor de", N, "! é igual a",F)
+    fimalgoritmo
+
+[Curiosidade: Fui testar com o fatorial de 14 e acusou "Integer overflow". Extrapolou o limite de Inteiro. Apareceu um resultado o teste de mesa, mas menor que o resultado esperado.]
+
+Funções, assim como os procedientos, também aceitam passagem de valor por referência.
+
+--------------------------------------------------------
+
+LEMBRE-SE: Se for usar uma função, não escreva nada dentro da função (Escreva, Escreval), retorne o dado para o programa principal escolher o que fazer.
+
+--------------------------------------------------------
+
+---- ChatGPT sobre o conselho no parágrafo anterior ----
+
+O conselho que você mencionou é bastante sólido e segue boas práticas de programação. Vamos analisar os pontos positivos e os problemas de se retornar ou escrever diretamente dentro da função.
+
+Por que o conselho faz sentido?
+
+Separation of Concerns (Separação de responsabilidades):
+
+Funções devem ter um propósito claro e bem definido. O principal objetivo de uma função é realizar um cálculo ou uma tarefa e retornar um resultado. Se a função escreve algo diretamente (como com Escreva ou Escreval), ela acaba assumindo responsabilidades adicionais, o que pode tornar o código mais difícil de entender, testar e manter.
+
+Em outras palavras, é bom separar o cálculo da apresentação. Uma função pode calcular o fatorial de um número, mas quem deve se preocupar em exibir o resultado é o programa principal, não a função que calcula.
+
+Reusabilidade e flexibilidade:
+
+Se uma função retorna um valor e não escreve diretamente, esse valor pode ser usado de diferentes maneiras. O programa principal pode decidir o que fazer com esse valor — talvez exibir, armazenar em um arquivo, ou processar de uma forma diferente.
+
+Isso torna a função mais flexível e reutilizável em diferentes contextos.
+
+Facilidade para testar e depurar:
+
+Funções que retornam valores são muito mais fáceis de testar, porque o teste pode se concentrar no resultado da função, sem se preocupar com o que foi impresso ou exibido no terminal.
+
+Além disso, a lógica fica mais clara, pois não há o risco de uma função imprimir mensagens que poderiam confundir o comportamento esperado.
+
+Problemas ao retornar uma mensagem diretamente dentro da função:
+
+Quando uma função retorna uma mensagem diretamente (ex: usando Escreva ou Escreval dentro dela), você pode ter alguns problemas:
+
+Dificuldade de reuso: Se a função já escreveu a mensagem para o usuário, você não pode reutilizá-la em outros lugares. Por exemplo, imagine que você queira calcular o fatorial de um número e também salvar esse valor em um arquivo ou exibi-lo de outra maneira — se a função só escreve no console, não há como usar o valor de outra forma sem mexer na função.
+
+Mistura de responsabilidades:
+
+Funções de cálculo (como o cálculo de fatorial) devem ser separadas de funções de exibição (como imprimir algo na tela).
+
+Misturar essas responsabilidades pode dificultar a manutenção e modificação do código no futuro. Se você precisar alterar a maneira como a mensagem é exibida (como mudar o formato ou o local de exibição), terá que modificar o código da função, o que pode levar a mais erros.
+
+Dificuldade para depuração e testes:
+
+Quando a função imprime uma mensagem diretamente, pode ser mais difícil de depurar, já que a saída da função está diretamente ligada à interface com o usuário. Isso torna mais difícil entender o que a função realmente está fazendo em termos de cálculo ou processamento de dados.
+
+Além disso, testar funções fica mais complicado, já que ao invés de testar o retorno da função, você precisaria capturar ou simular a saída de impressão, o que não é a melhor abordagem para testes.
+
+Confusão no fluxo de controle:
+
+Se a função imprime algo diretamente, ela acaba influenciando o fluxo de controle do programa. O código que chama a função precisa entender que ela tem efeitos colaterais (como exibir uma mensagem), o que pode levar a comportamento inesperado, especialmente se você não quiser que a função exiba nada, apenas retorne um valor.
+
+[...]
+
+Conclusão:
+
+O conselho de não escrever nada diretamente dentro da função, mas sim retornar os dados para o programa principal, ajuda a manter o código mais modular, reutilizável e fácil de testar. Isso também melhora a clareza do código e permite que você controle melhor o que acontece com o resultado da função.
+
+Em resumo: funções devem ser responsáveis por cálculos ou processamentos, e quem deve se preocupar com a exibição ou efeitos colaterais (como imprimir algo na tela) é o programa principal.
+
+---- Fim do ChatGPT sobre o conselho no parágrafo anterior ----
+
+Portanto, é um conselho bom.
+
+
+-----------
+FUNÇÕES PRONTAS DO VISUALG
+
+Todos as linguagens de programação permitem a criação de funções personalizadas. A maioria das linguagens já vem com funções pré-definidas, o Java é um exemplo que já vem com várias funções pré-definidas dentro das suas bibliotecas.
+
+Valores Caractere
+
+Funções de tratamento de string
+
+Exemplo:
+
+Para a variável string:
+
+Site : Caractere
+Site <- "CursoEmVideo"
+
+Compr(valor)
+
+Compr(Site) mostrará o comprimento da string. Ela retorna um inteiro com a quantidade de caracteres. [É o lenght]
+
+Copia(Site, 6, 12). O primeiro parâmetro é a variável, o segundo é em qual caractere começa a contagem (letra E), o terceiro parâmetro indica quantas casas serão mostradas (portanto, Em). [É um slice]
+
+Maiusc(Site) Coloca em maiúsculas ("CURSOEMVIDEO"). [É o upperCase]
+Minusc(Site) Coloca em minúsculas("cursoemvideo"). [É o lowerCase]
+
+Maiusc e Minusc não funcionam para variáveis Caractere dentro do Visualg.
+
+Pos("Video", Site) indica a posição de uma determinada string ou caractere em uma string maior.(Nesse caso, 8) [parece algo como indexOf]
+
+PERCEBA QUE A CONTAGEM NO VISUALG NÃO COMEÇA DO 0, É UMA HERESIA!
+
+Asc("C") dá o código do Caractere, da tabela ASCII. (Nesse caso, 67)
+
+Carac(67) é o contrário da Asc(valor). Você passa o código ASCII e ela retorna o caractere (Nesse caso, C).
+
+--
+
+Ele criou agora um analisar do nomes com essas funções pré-definidas, para testar elas.
+
+Uma coisa ali que ele fez foi interessante: 
+
+Como a função Copia parte da primeira letra do nome no segundo parâmetro, se o nome tiver menos letras que o valor indicado, não vai mostrar, aí para pegar a última letra de "Ana", por exemplo, ao invés de usar o 7 que cabia para "Gustavo", ele usou a função de comprimento Compr(valor), assim:
+
+    Escreval("A última letra do seu nome é", Copia(Maiusc(N), Compr(N), 1))
+
+FIQUE ATENTO QUE 'A' é diferente de 'a'.
+
+No Visualg, na função Pos(string, string), se o valor indicado na primeira string não existir, retornará o valor 0. Por exemplo, Pos("X", N), em que N é Gustavo.
+
+E no fim ele fez um 'for' que mostra o nome ao contrário:
+
+    Para C <- Compr(N) ate 1 passo -1 faca
+        Escreva(Copia(Maiusc(N),C,1))
+    FimPara
+
