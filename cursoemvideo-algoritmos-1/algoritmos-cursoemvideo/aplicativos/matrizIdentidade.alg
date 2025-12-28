@@ -19,5 +19,4 @@ inicio
         fimpara
         Escreval()
     fimpara
-    fimalgoritmo
 fimalgoritmo

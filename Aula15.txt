@@ -112,3 +112,11 @@ Ele propôs um exercicio em que numa matriz de 4ª dimensão o usuário pode esc
 E o outro proposto é um jogo da velha. tem as casas de 1 a 9. Coloca X e O. E mostra jogada inválida se usar posição que já foi colocada (ou não existir).
 
 [Desgraçado! Gostei! Eu querendo terminar o curso, agora fiquei tentado a fazer.]
+
+-----------
+
+Estou tentando fazer, mas estou com problema para fazer o programa identificar uma função que retorne uma matriz. Vou ter que fazer sem função.
+
+Fiz o Dissecando Matrizes. Ficou bem parecido com o dele (poderia fazer igual na parte dos inputs para a matriz, mas não quis.). Fiz até uma firulinha extra desnecessária: um Escreval("SELECIONE UMA OPÇÃO VÁLIDA!"). Essa firulinha é desnecessária porque o programa já lidava com uma digitação fora da opções naturalmente.
+
+NOTA IMPORTANTE: Percebi que a acentuação funciona se o programa for salvo pelo Visualg. Se for salvo no VSCode, dá problema de caractere corrompido (mostra o replacement character)
