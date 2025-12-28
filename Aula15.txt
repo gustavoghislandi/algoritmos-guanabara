@@ -114,9 +114,28 @@ E o outro proposto é um jogo da velha. tem as casas de 1 a 9. Coloca X e O. E m
 [Desgraçado! Gostei! Eu querendo terminar o curso, agora fiquei tentado a fazer.]
 
 -----------
+[
 
 Estou tentando fazer, mas estou com problema para fazer o programa identificar uma função que retorne uma matriz. Vou ter que fazer sem função.
 
 Fiz o Dissecando Matrizes. Ficou bem parecido com o dele (poderia fazer igual na parte dos inputs para a matriz, mas não quis.). Fiz até uma firulinha extra desnecessária: um Escreval("SELECIONE UMA OPÇÃO VÁLIDA!"). Essa firulinha é desnecessária porque o programa já lidava com uma digitação fora da opções naturalmente.
 
 NOTA IMPORTANTE: Percebi que a acentuação funciona se o programa for salvo pelo Visualg. Se for salvo no VSCode, dá problema de caractere corrompido (mostra o replacement character)
+
+--
+
+FUI ATRÁS DE UM MANUAL PRA VER A SINTAXE DE PARÂMETROS, porque isso já estava me irritando. Encontrei que são divididos por ";", por isso que não conseguia fazer no outro. E vetor é só do tipo de dado mesmo. Exemplo:
+
+    Procedimento Velha(p,l,c: Inteiro; m: Inteiro; ficha:Caractere; jaFoi:Logico)
+
+Sim, deixei 'm' separado para mostrar que é matriz.
+
+Enfim, ainda assim não deu certo.
+
+---
+
+TERMINEI!!!! Fiz o mais complexo sozinho!!! Sem IA, sem Google, sem manual, sem nada (porque esses não ajudaram em nada!kkk), só na raça!!! 
+
+YEAHH!!!!
+
+Caramba, eu tinha usado de início um switch case e tentei chamar função. Mas como ela era a mesma não fez diferença. Pude refatorar e deixar bem menor.]
